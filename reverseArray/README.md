@@ -9,4 +9,4 @@ Write a function called reverseArray which takes an array as an argument. Withou
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![Whiteboard Solution](.assets/array_reverse.jpg)
+![Whiteboard Solution](../assets/array_reverse.jpg)
