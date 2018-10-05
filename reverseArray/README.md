@@ -1,4 +1,4 @@
- # Reverse an Array
+# Reverse an Array
 <!-- Short summary or background information -->
 Returns a given array with its elements reversed.
 
