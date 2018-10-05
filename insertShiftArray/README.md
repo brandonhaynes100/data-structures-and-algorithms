@@ -1,4 +1,4 @@
- # Code Challenge 02 - insertShiftArray
+# Code Challenge 02 - insertShiftArray
 <!-- Short summary or background information -->
 Inserts and shifts an array in middle at index.
 
