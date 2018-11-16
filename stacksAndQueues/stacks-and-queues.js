@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./node.js');
+const Node = require('./lib/node.js');
 
 class Stack {
   constructor() {
