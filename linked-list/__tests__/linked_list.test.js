@@ -1,6 +1,6 @@
 'use strict';
 
-let LL = require('../../lib/linked_list.js');
+let LL = require('../lib/linked_list.js');
 
 describe('Linked List', () => {
 
