@@ -5,24 +5,24 @@ let tree = require('../lib/node.js');
 describe('Node', () => {
 
   it('constructor()', ()=> {
-    let list = new Tree();
-    expect(list.head).toBeNull();
+    let node = new Node();
+    expect(node.head).toBeNull();
   });
 
   it('append()', ()=> {
-    let list = new Tree();
+    let node = new Tree();
     let initialValue = 'First One';
-    list.append(initialValue);
-    expect(list.head.value).toEqual(initialValue);
+    node.append(initialValue);
+    expect(node.head.value).toEqual(initialValue);
 
     let newValue = 'Soemthing Else';
-    list.append(newValue);
-    expect(list.head.value).toEqual(initialValue);
+    node.append(newValue);
+    expect(node.head.value).toEqual(initialValue);
 
     let anotherOne = 'Another One';
-    list.append(anotherOne);
+    node.append(anotherOne);
 
-    console.log(list);
+    console.log(node);
     
   });
 
