@@ -1,0 +1,25 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "A repository for storing data structures and code challenges.",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^5.7.0",
+    "jest": "^23.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonhaynes100/data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonhaynes100/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/brandonhaynes100/data-structures-and-algorithms#readme"
+}
