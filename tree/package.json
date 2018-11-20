@@ -2,7 +2,7 @@
   "name": "tree",
   "version": "1.0.0",
   "description": "![cf](http://i.imgur.com/7v5ASc8.png) Tree Data Structure ================================================================",
-  "main": "index.js",
+  "main": "./lib/tree.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
