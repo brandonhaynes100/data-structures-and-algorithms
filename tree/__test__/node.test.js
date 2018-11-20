@@ -1,16 +1,16 @@
 'use strict';
 
-let tree = require('../lib/node.js');
+let node = require('../lib/node.js');
 
 describe('Node', () => {
 
   it('constructor()', ()=> {
-    let node = new Node();
+    let node = new node();
     expect(node.head).toBeNull();
   });
 
   it('append()', ()=> {
-    let node = new Tree();
+    let node = new node();
     let initialValue = 'First One';
     node.append(initialValue);
     expect(node.head.value).toEqual(initialValue);
