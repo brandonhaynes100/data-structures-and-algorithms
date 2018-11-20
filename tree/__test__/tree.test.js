@@ -5,25 +5,15 @@ let tree = require('../lib/tree.js');
 describe('Tree', () => {
 
   it('constructor()', ()=> {
-    let list = new LL();
-    expect(list.head).toBeNull();
+    let tree = new tree();
+    expect(tree.root).toBeNull();
   });
 
-  it('append()', ()=> {
-    let list = new LL();
+  it('insert()', ()=> {
+    let tree = new tree();
     let initialValue = 'First One';
-    list.append(initialValue);
-    expect(list.head.value).toEqual(initialValue);
-
-    let newValue = 'Soemthing Else';
-    list.append(newValue);
-    expect(list.head.value).toEqual(initialValue);
-
-    let anotherOne = 'Another One';
-    list.append(anotherOne);
-
-    console.log(list);
-    
+    tree.insert(initialValue);
+    expect(tree.root.value).toEqual(initialValue);
   });
 
 });
