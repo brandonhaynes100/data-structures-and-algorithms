@@ -9,25 +9,24 @@ class Hashmap {
     this.map = new Array(capacity);
   }
 
-  hash(key) {
-    let sumHash = key.split('').reduce((p, n) => {
-      return p + n.charCodeAt(0);
-    }, 0);
-    let index = sumHash % this.capacity;
-    return index;
-  }
-
+  /**
+   * Hashes the key and adds the key/value pair to the map
+   * @param key
+   * @param value
+   */
   add(key,value) {
-    let hash = this.hash(key);
-    console.log(hash, key, value);
+    let hash = this.getHash(key);
+    // console.log(hash, key, value);
 
     //TODO
     // Please use a LL instead of an array!
-    if(! this.map[hash] ) { this.map[hash] = []; }
+    if(! this.map[hash] ) { 
+      this.map[hash] = []; 
+      this.size = this.size + 1;
+    }
 
-    //TODO
     // We used an object here, but this could be anything...
-    this.map[hash].push({[key]:value});
+    this.map[hash].push({key: key, value: value});
   }
 
   //TODO
@@ -37,7 +36,11 @@ class Hashmap {
    * @return {string}
    */
   find(key) {
-    return 'default return value';
+    if( this.contains(key) ) {
+      let bucketContents = this.map[this.getHash(key)];
+      return bucketContents[0]['value'];
+    }
+    return 'key not present';
   }
 
   //TODO
@@ -48,42 +51,28 @@ class Hashmap {
    * @return {boolean}
    */
   contains(key) {
+    let bucketContents = this.map[this.getHash(key)];
+    if( bucketContents !== undefined ) {
+      for( let i = 0; i < bucketContents.length; i++){
+        if( bucketContents[i] ) {
+          return true;
+        }
+      }
+    }
     return false;
   }
 
-  //TODO
   /**
    * Hash a key and return the resulting index
    * @param key
    * @return {integer}
    */
   getHash(key) {
-    return 0;
-  }
-
-  /**
-   * Delete a key from the map
-   * @param key
-   */
-  delete(key) {
-
-  }
-
-  /**
-   * Replace a value for a key in a hashmap
-   * @param key
-   * @param newValue
-   */
-  update(key,newValue) {
-
-  }
-
-  serialize() {
-
-  }
-
-  deserialize() {
-
+    let sumHash = key.split('').reduce((p, n) => {
+      return p + n.charCodeAt(0);
+    }, 0);
+    let index = sumHash % this.capacity;
+    return index;
   }
 
 }
@@ -105,3 +94,9 @@ myhash.add('Michael','Student');
 myhash.add('Ovi','Student');
 
 console.log(util.inspect(myhash,{showHidden:false,depth:null}));
+
+console.log('contains(John) should be T: ' + myhash.contains('John'));
+console.log('contains(lol) should be F: ' + myhash.contains('lol'));
+console.log('find(John) should return Boss: ' + myhash.find('John'));
+console.log('find(lol) should return error message: ' + myhash.find('lol'));
+console.log(myhash.map[myhash.getHash('')]);
